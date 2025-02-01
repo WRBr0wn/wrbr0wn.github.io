@@ -1,4 +1,10 @@
 @charset "UTF-8";
+a:link {
+	color:#A5A5A5;
+}
+a:active {
+  color: #A5A5A5;
+}
 .container {
 	background-color: #FFFFFF;
 	width: 90%;
@@ -34,6 +40,7 @@
 	width: 25%;
 	float: left;
 	font-family: "Source Sans Pro";
+	font-size: 20px;
 	color: #A5A5A5;
 	line-height: 24px;
 	padding-top: 10px;
@@ -56,6 +63,7 @@
 }
 .primary_header {
 	width: 100%;
+	height: 8%;
 	background-color: #52bad5;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -120,6 +128,7 @@
 	color: #717070;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-size: 40px;
 }
 .container .left_article p {
 	padding-left: 5%;
@@ -129,11 +138,11 @@
 	margin-top: 30px;
 	margin-bottom: 15px;
 	color: #B3B3B3;
+	font-size: 20px;
 }
 .right_article {
 	width: 40%;
 	float: left;
-	background-color: #F6F6F6;
 }
 .container .right_article ul {
 	margin-top: 0px;
@@ -178,16 +187,16 @@
 	color: #FFFFFF;
 	letter-spacing: 2px;
 }
-.placeholder {
+.right_image {
 	/* [disabled]max-width: 400px;
 */
 	/* [disabled]max-height: 200px;
 */
 	width: 100%;
-	padding-top: 30px;
+	padding-top: 5%;
 	/* [disabled]padding-left: 19px;
 */
-	padding-bottom: 30px;
+	padding-bottom: 5%;
 	height: 100%;
 }
 .left_half {
@@ -262,7 +271,7 @@ body {
 	width: 100%;
 	height: auto;
 }
-.placeholder {
+.right_image {
 	width: 100%;
 	margin-top: 22PX;
 	margin-right: 0px;
@@ -349,7 +358,7 @@ body {
 	height: auto;
 	padding-bottom: 25px;
 }
-.placeholder {
+.right_image {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
@@ -372,7 +381,6 @@ body {
 	padding-top: 0px;
 	padding-right: 0px;
 	padding-bottom: 0px;
-	padding-left: 0px;
 	padding-left: 0px;
 }
 .columns p {
@@ -400,18 +408,27 @@ body {
 	margin-left: 7%;
 }
 .left_article {
+	width: 100%;
 	height: auto;
 }
 .right_article {
-	height: auto;
-	padding-bottom: 27px;
-}
-.placeholder {
 	width: 100%;
-	margin-left: 0px;
+	height: auto;
+	padding-bottom: 25px;
+}
+.right_image {
+	margin-top: 0px;
 	margin-right: 0px;
-	padding-left: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
 	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	max-height: 100%;
 }
 .columns {
 	width: 50%;
