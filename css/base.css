@@ -34,6 +34,25 @@ a:active {
 	padding-top: 15px;
 }
 
+/* Common Primary Header */
+.main_header {
+	width: 100%;
+	padding: 25px 0; /* Increased padding from 15px */
+	display: flex;
+	justify-content: center; /* Horizontally centers the title */
+	align-items: center;    /* Vertically centers the title */
+}
+
+.header_title {
+	color: var(--text-white);
+	font-weight: bold;
+	font-style: italic;
+	letter-spacing: 4px;
+	font-size: 40px;
+	margin: 0;
+}
+
+
 /* Common Secondary Header (Navigation) */
 .secondary_header {
 	width: 100%;
