@@ -2,20 +2,9 @@
    Page-Specific Styles for Home (index.html)
    ========================================================================== */
 
-.primary_header {
-	width: 100%;
+.main_header {
 	background-color: var(--theme-primary);
-	padding: 10px 0;
-	clear: left;
 	border-bottom: 2px solid var(--theme-secondary);
-}
-
-.title {
-	font-weight: bold;
-	font-style: normal;
-	text-align: center;
-	color: var(--text-white);
-	letter-spacing: 2px;
 }
 
 /* Flexbox container for the main article and aside */
@@ -118,9 +107,10 @@
 	background-color: #414141;
 	padding: 20px 0;
 	clear: both;
-	display: flex; /* Changed to Flexbox */
-	justify-content: space-around; /* Spreads items out evenly */
+	display: flex;
+	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .social_icon {
