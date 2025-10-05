@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Shared Styles for All Pages
+   ========================================================================== */
+
+/* Define color palette and base styles */
+:root {
+  --theme-primary: #52bad5;
+  --theme-secondary: #2C9AB7;
+  --theme-accent: #01B2D1;
+  --bg-light-gray: #B3B3B3;
+  --bg-dark-gray: #717070;
+  --bg-off-white: #FFFFFF;
+  --text-light: #A5A5A5;
+  --text-dark: #343434;
+  --text-white: #FFFFFF;
+}
+
+body {
+	margin: 0;
+	background-color: var(--bg-off-white);
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+
+a:link,
+a:active {
+	color: var(--text-light);
+}
+
+.container {
+	background-color: var(--bg-off-white);
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+}
+
+/* Common Secondary Header (Navigation) */
+.secondary_header {
+	width: 100%;
+	padding: 50px 0;
+	background-color: var(--bg-light-gray);
+	clear: left;
+}
+
+.container .secondary_header ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.secondary_header ul li a {
+	font-weight: normal;
+	font-size: 18px;
+	color: var(--text-white);
+	letter-spacing: 1px;
+	transition: all 0.3s linear;
+    text-decoration: none;
+}
+
+.secondary_header ul li a:hover {
+	color: var(--bg-dark-gray);
+	cursor: pointer;
+}
+
+/* Common Copyright Footer */
+.copyright {
+	text-align: center;
+	background-color: var(--bg-dark-gray);
+	color: var(--text-white);
+	text-transform: uppercase;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	border-top-width: 2px;
+    padding: 20px 0;
+}
+
+/* ==========================================================================
+   Shared Mobile & Tablet Styles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .secondary_header {
+        padding: 25px 0;
+    }
+	.container .secondary_header ul {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
