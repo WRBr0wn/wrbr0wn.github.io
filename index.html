@@ -1,63 +1,129 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home</title>
-<link href="css/base.css" rel="stylesheet" type="text/css">
-<link href="css/home.css" rel="stylesheet" type="text/css">
-<link rel="icon" type="image/png" href="Images/favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wyatt Brown | Data Scientist & Developer</title>
+    <link href="css/modern.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-  <header class="main_header">
-    <h1 class="header_title">Home</h1>
-  </header>
-  <nav class="secondary_header" id="menu">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="https://www.linkedin.com/in/wrbr0wn/">PROFESSIONAL</a></li>
-      <li><a href="DrawnAtDusk.html">DRAWN AT DUSK</a></li>
-    </ul>
-  </nav>
-  <section class="main-content">
-    <h2 class="noDisplay">Main Content</h2>
-    <article class="left_article">
-      <h3>Projects of Wyatt Brown</h3>
-      <p>Welcome to my personal website for all of my public projects!</p>
-	  <p>In the navigation menu you can find the pages for all of my projects and below you can find short descriptions.</p>
-	  <p>At the bottom of the page you can find links to the best ways to get a hold of me in regards to each project.</p>
-    </article>
-    <aside class="right_article"><img src="Images/IMG_8186.jpg" alt="Scenic photo of a city park on a sunny day" class="right_image"/> </aside>
-  </section>
-  <div class="row">
-    <div class="columns">
-      <p class="thumbnail_align"> <img src="Images/prof-headshot-cropped.jpg" alt="Headshot of Wyatt Brown" class="thumbnail"/> </p>
-      <h4>Professional</h4>
-      <p>Data Science Major and hobbyist of many genres,  creative and mathematical, my professional projects and skills can  largely be found on my <a href="https://github.com/WRBr0wn">GitHub</a> and <a href="https://www.linkedin.com/in/wrbr0wn/">LinkedIn</a>.</p>
+
+<main class="bento-grid">
+    
+    <div class="card hero">
+        <div class="hero-content">
+            <h1>Wyatt Brown</h1>
+            <h2>Data Science Undergraduate <br> <span class="accent">University of Minnesota</span></h2>
+            <p>Combining statistical rigor with full-stack development. Seeking Summer 2026 Internships.</p>
+            <div class="action-buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="mailto:Wyattrbrown@gmail.com" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image">
+             <img src="Images/prof-headshot-cropped.jpg" alt="Wyatt Brown Headshot">
+        </div>
     </div>
-    <div class="columns">
-      <p class="thumbnail_align"> <img src="Images/DrawnAtDusk.jpg" alt="Logo for the Drawn At Dusk art project" class="thumbnail_white"/> </p>
-      <h4>Drawn@Dusk</h4>
-      <p>My foray into art, Drawn At Dusk serves as my creative space to show of my artistic interest. From paintings to scratch boards, my creative journey is shown off here!</p>
+
+    <div class="card socials">
+        <a href="https://www.linkedin.com/in/wrbr0wn/" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://github.com/WRBr0wn" target="_blank" class="social-link">GitHub</a>
+        <a href="Resume - Wyatt Brown.pdf" target="_blank" class="social-link highlight">Download Resume (PDF)</a>
     </div>
-    <div class="columns">
-      <p class="thumbnail_align"> <img src="Images/zenvolka.png" alt="Logo for Zen project" class="thumbnail"/> </p>
-      <h4>Zen</h4>
+
+    <div class="card resume-snapshot">
+        <h3>Core Competencies</h3>
+        
+        <div class="skill-group">
+            <h4>Languages & Tools</h4>
+            <div class="tags">
+                <span>Python</span>
+                <span>R</span>
+                <span>SQL</span>
+                <span>Java</span>
+                <span>Julia/JuMP</span>
+                <span>Docker</span>
+                <span>Git</span>
+            </div>
+        </div>
+
+        <div class="skill-group">
+            <h4>Focus Areas</h4>
+            <ul>
+                <li>Machine Learning Optimization</li>
+                <li>Statistical Analysis</li>
+                <li>Full-Stack Development</li>
+            </ul>
+        </div>
+        
+        <div class="experience-highlight">
+            <h4>Latest Experience</h4>
+            <p><strong>Freelance IT Consultant</strong><br>XLR8 Sports Training (2022-2025)</p>
+            <p class="tiny">Full-stack support & system migration.</p>
+        </div>
     </div>
-    <div class="columns">
-      <p class="thumbnail_align"> <img src="Images/musings.jpg" alt="Logo for Musings project" class="thumbnail"/> </p>
-      <h4>Musings</h4>
+
+    <div class="card project-header" id="projects">
+        <h3>Portfolio</h3>
     </div>
-  </div>
-  <div class="social">
-    <a href="https://www.linkedin.com/in/wrbr0wn/" class="social_icon"><img src="Images/prof-headshot-cropped.jpg" alt="Link to LinkedIn profile" class="thumbnail"/></a>
-    <a href="https://www.instagram.com/drawnatdusk/" class="social_icon"><img src="Images/DrawnAtDusk.jpg" alt="Link to Drawn at Dusk Instagram" class="thumbnail"/></a>
-    <a href="#" class="social_icon"><img src="Images/zenvolka.png" alt="Link to Zen project" class="thumbnail"/></a>
-    <a href="#" class="social_icon"><img src="Images/musings.jpg" alt="Link to Musings project" class="thumbnail"/></a>
-  </div>
-  <div class="copyright">&copy;2025 - <strong>Wyatt Brown</strong></div>
-</div>
+
+    <a href="DrawnAtDusk.html" class="card project-card">
+        <div class="card-bg" style="background-image: url('Images/DrawnAtDusk.jpg');"></div>
+        <div class="card-overlay">
+            <h4>Drawn @ Dusk</h4>
+            <p>Digital Art Gallery & Portfolio</p>
+            <span class="arrow">&rarr;</span>
+        </div>
+    </a>
+
+    <a href="https://github.com/WRBr0wn" target="_blank" class="card project-card">
+        <div class="card-bg" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); filter: none;"></div>
+        <div class="card-overlay">
+            <h4>Vending Machine Sales Optimization</h4>
+            <p><strong>Stack:</strong> Python & Julia</p>
+            <p class="tiny-desc">51% cost reduction via "Predict-then-Optimize" modeling.</p>
+            <span class="arrow">&rarr;</span>
+        </div>
+    </a>
+
+    <a href="https://github.com/WRBr0wn/Particle-Simulator" target="_blank" class="card project-card">
+        <div class="card-bg" style="background: linear-gradient(135deg, #134E5E 0%, #71B280 100%); filter: none;"></div>
+        <div class="card-overlay">
+            <h4>Graphical Particle Simulator</h4>
+            <p><strong>Stack:</strong> Java & Docker</p>
+            <p class="tiny-desc">Containerized physics engine with API state persistence.</p>
+            <span class="arrow">&rarr;</span>
+        </div>
+    </a>
+
+    <a class="card project-card">
+        <div class="card-bg" style="background-image: url('Images/zenvolka.png');"></div>
+        <div class="card-overlay">
+            <h4>Zen</h4>
+            <p>Media Online</p>
+            <span class="arrow">&rarr;</span>
+        </div>
+    </a>
+
+    <a class="card project-card">
+        <div class="card-bg" style="background-image: url('Images/musings.jpg');"></div>
+        <div class="card-overlay">
+            <h4>Musings</h4>
+            <p>Thoughts & Essays</p>
+            <span class="arrow">&rarr;</span>
+        </div>
+    </a>
+
+</main>
+
+<footer class="main-footer">
+    <p>&copy; 2026 Wyatt Brown. Built with Data-Driven Design.</p>
+</footer>
+
 </body>
 </html>
