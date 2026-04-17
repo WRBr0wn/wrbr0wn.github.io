@@ -1,4 +1,4 @@
-# Wyatt Brown | Data Scientist & Developer
+# Wyatt Brown | Personal Website
 
 ![Build Status](https://img.shields.io/badge/Build-Stable-success)
 ![University](https://img.shields.io/badge/University_of_Minnesota-Data_Science-maroon)
