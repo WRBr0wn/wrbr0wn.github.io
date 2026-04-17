@@ -4,7 +4,7 @@
 ![University](https://img.shields.io/badge/University_of_Minnesota-Data_Science-maroon)
 ![Stack](https://img.shields.io/badge/Stack-HTML5_%7C_CSS3_%7C_JS-blue)
 
-> "Combining statistical rigor with full-stack development."
+> "Turning statistical rigor into machine learning that delivers."
 
 ## 0. Project Overview
 This repository hosts the personal portfolio and digital curriculum vitae for Wyatt Brown. The architecture is designed as a static, responsive web application utilizing a "Bento-grid" layout engine to organize core competencies, technical projects, and creative works into a modular interface.
@@ -29,9 +29,9 @@ The frontend is built on a lightweight, dependency-minimal stack optimized for p
 
 ### A. Core Competencies (Data Science)
 The primary interface (`index.html`) highlights the following technical proficiencies:
-* **Languages:** Python, R, SQL, Java, Julia/JuMP.
+* **Languages:** Python (sklearn, PyTorch), JAX (Flax, Optax), R, Java, Julia/JuMP.
 * **Infrastructure:** Docker, Git.
-* **Focus Areas:** Machine Learning Optimization, Statistical Analysis.
+* **Focus Areas:** Statistical Learning & Inference, Probabilistic AI & Reinforcement Learning, Machine Learning Optimization, Operations Research & Decision Science, Software Development Lifecycle.
 
 ### B. Featured Projects
 The portfolio routes traffic to specific technical repositories:
@@ -64,4 +64,4 @@ A dedicated sub-module (`DrawnAtDusk.html`) serves as a digital gallery.
 * **Email:** [Wyattrbrown@gmail.com](mailto:Wyattrbrown@gmail.com)
 
 ---
-*© 2026 Wyatt Brown. Built with Data-Driven Design.*
+*© 2026 Wyatt Brown*
