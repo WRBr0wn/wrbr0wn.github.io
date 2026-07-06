@@ -15,6 +15,9 @@
     /* Spacing */
     --gap: 16px;
     --radius: 12px;
+
+    /* Type */
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 body {
@@ -24,6 +27,56 @@ body {
     margin: 0;
     padding: 20px;
     line-height: 1.6;
+}
+
+/* Atmosphere: film grain overlay + a single teal glow anchored to the top left */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    opacity: 0.028;
+    mix-blend-mode: overlay;
+}
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 70% 45% at 22% 8%, var(--accent-glow), transparent 62%),
+        radial-gradient(ellipse 55% 40% at 88% 92%, rgba(82, 186, 213, 0.07), transparent 60%);
+}
+
+/* Mono microtype */
+.kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 14px 0;
+}
+.kicker::after {
+    content: "";
+    flex: 0 0 42px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+}
+.stack-tag {
+    font-family: var(--font-mono);
+    font-size: 10px !important;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ccc;
 }
 
 /* THE GRID CONTAINER */
@@ -101,6 +154,43 @@ body {
 .project-card:hover .arrow { opacity: 1; transform: translateX(0); }
 
 .main-footer { grid-column: span 4; text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 0.9rem; }
+.footer-kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+}
+.footer-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* Reveal on scroll (class applied by js/reveal.js; no JS = nothing hidden) */
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 /* Coming Soon placeholder cards */
 .project-card.coming-soon { cursor: default; }
@@ -173,7 +263,7 @@ body {
 .intro-text h1, .intro-text h2 { color: var(--accent); font-size: 2rem; margin-top: 0; }
 .intro-text p { color: var(--text-secondary); font-size: 1.1rem; }
 .intro-logo { flex: 1; text-align: center; }
-.intro-logo img { width: 180px; filter: drop-shadow(0 0 10px rgba(82, 186, 213, 0.3)); }
+.intro-logo img { width: 180px; height: auto; filter: drop-shadow(0 0 10px rgba(82, 186, 213, 0.3)); }
 
 /* The Art Grid (Replaces old .gallery floats) */
 .gallery-section {
@@ -240,6 +330,9 @@ body {
     .hero, .socials, .resume-snapshot, .project-header, .project-card, .main-footer, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
     .hero { flex-direction: column-reverse; text-align: center; }
     .gallery-intro { flex-direction: column-reverse; text-align: center; }
+    .kicker { justify-content: center; }
+    .kicker::before { content: ""; flex: 0 0 42px; height: 1px; background: var(--accent); opacity: 0.5; }
+    .footer-meta { justify-content: center; }
 }
 
 /* =========================================
@@ -256,11 +349,10 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* 2. REVEAL ON HOVER */
+/* 2. REVEAL ON HOVER (arrow only, no zone shading) */
 .lb-nav a.lb-prev:hover,
 .lb-nav a.lb-next:hover {
-    opacity: 1 !important; 
-    background-color: rgba(0, 0, 0, 0.1); 
+    opacity: 1 !important;
 }
 
 /* 3. DRAW THE ARROWS (Using Code) */
@@ -288,12 +380,16 @@ body {
     transform: translateY(-50%);
 }
 
-/* 4. CLOSE BUTTON */
+/* 4. CLOSE BUTTON (moved from the caption bar to the conventional top right) */
 .lb-data .lb-close {
     background-image: none !important;
     width: auto !important;
     opacity: 0.6 !important;
     transition: opacity 0.2s;
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 10001;
 }
 
 .lb-data .lb-close:hover {
