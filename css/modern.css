@@ -102,6 +102,24 @@ body {
 
 .main-footer { grid-column: span 4; text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 0.9rem; }
 
+/* Coming Soon placeholder cards */
+.project-card.coming-soon { cursor: default; }
+.project-card.coming-soon:hover { transform: none; box-shadow: none; }
+.project-card.coming-soon:hover .card-bg { transform: none; filter: grayscale(100%); }
+.project-card.coming-soon .card-bg { opacity: 0.5; }
+.badge {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    border-radius: 999px;
+}
+
 .tiny-desc {
     font-size: 0.8rem !important;
     opacity: 0.8;
@@ -152,7 +170,7 @@ body {
     gap: 40px;
 }
 .intro-text { flex: 2; }
-.intro-text h2 { color: var(--accent); font-size: 2rem; margin-top: 0; }
+.intro-text h1, .intro-text h2 { color: var(--accent); font-size: 2rem; margin-top: 0; }
 .intro-text p { color: var(--text-secondary); font-size: 1.1rem; }
 .intro-logo { flex: 1; text-align: center; }
 .intro-logo img { width: 180px; filter: drop-shadow(0 0 10px rgba(82, 186, 213, 0.3)); }
