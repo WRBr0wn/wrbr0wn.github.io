@@ -2,6 +2,59 @@
    MODERN BENTO GRID SYSTEM (2026 Standard)
    ========================================= */
 
+/* =========================================
+   FONT LOADING
+   The webfonts are same-origin (fonts/) and preloaded in each page <head>, so
+   they are available at first paint with no fallback stage. font-display: block
+   holds the brief block period open rather than swapping a fallback in first; the
+   preload makes that period effectively zero. The 'Inter Fallback' and 'JetBrains
+   Mono Fallback' faces below are metric-matched safety nets for total load failure.
+   ========================================= */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: block;
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: block;
+    src: url('../fonts/Inter-ExtraBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Inter Fallback';
+    src: local('Arial'), local('Helvetica Neue'), local('Liberation Sans');
+    ascent-override: 90.20%;
+    descent-override: 22.48%;
+    line-gap-override: 0.00%;
+    size-adjust: 107.40%;
+}
+@font-face {
+    font-family: 'JetBrains Mono Fallback';
+    src: local('Consolas'), local('Menlo'), local('DejaVu Sans Mono');
+    ascent-override: 102.00%;
+    descent-override: 30.00%;
+    line-gap-override: 0.00%;
+    size-adjust: 100.00%;
+}
+
 :root {
     /* Color Palette - Dark Professional */
     --bg-deep: #121212;
@@ -17,13 +70,14 @@
     --radius: 12px;
 
     /* Type */
-    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, monospace;
+    --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
     background-color: var(--bg-deep);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     margin: 0;
     padding: 20px;
     line-height: 1.6;
@@ -206,26 +260,12 @@ body::after {
     border-top: 1px solid rgba(255,255,255,0.08);
     /* Inter, not JetBrains Mono: the mono zero carries a centre dot that reads
        as an 8 at this size, so "2026" looked like "2826". */
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--text-secondary);
-}
-
-/* Reveal on scroll (class applied by js/reveal.js; no JS = nothing hidden) */
-.reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1);
-}
-.reveal.visible {
-    opacity: 1;
-    transform: none;
-}
-@media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* Real project, no public link (course work). Reads as a normal card, just not clickable. */
@@ -264,18 +304,21 @@ body::after {
    ========================================= */
 
 /* Top Navigation Bar */
-/* Links only. The Home link already does the job a wordmark would, on both pages. */
+/* Links only. The Home link already does the job a wordmark would, on both pages.
+   Horizontal padding is 0 so the four gaps below are measured edge to edge. */
 .nav-bar {
     grid-column: span 4;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px 0;
 }
+/* space-evenly, not space-around or space-between: it makes the gap before Home,
+   the two gaps between links, and the gap after Gallery all the same width.
+   No `gap` here, or it would stack on top of the even distribution. */
+.nav-links { display: flex; flex: 1; justify-content: space-evenly; }
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    margin-left: 20px;
     font-weight: 600;
     transition: color 0.2s;
     text-transform: uppercase;
@@ -435,9 +478,36 @@ body::after {
 }
 
 .lb-data .lb-close::after {
-    content: "✕"; 
+    content: "✕";
     font-family: sans-serif;
     font-size: 28px;
     color: #ccc;
     font-weight: bold;
+}
+
+/* 5. LOADING INDICATOR + BROKEN-IMAGE SUPPRESSION
+   lightbox.min.css references four images that are not in the repo:
+   images/loading.gif (.lb-cancel), images/prev.png (.lb-prev),
+   images/next.png (.lb-next) and images/close.png (.lb-close). Prev, next and
+   close are drawn in CSS above; loading.gif had no replacement, so a broken
+   image showed over each full-size artwork while it loaded. Neutralise all four
+   references here, then draw the loader as a pure-CSS spinner. */
+.lb-loader .lb-cancel,
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next,
+.lb-data .lb-close {
+    background-image: none !important;
+}
+
+.lb-loader .lb-cancel {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: lb-spin 0.8s linear infinite;
+}
+@keyframes lb-spin {
+    to { transform: rotate(360deg); }
 }
