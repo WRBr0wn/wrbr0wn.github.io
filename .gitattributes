@@ -1,0 +1,16 @@
+# Normalize line endings so text files stop showing up as fully rewritten in diffs.
+* text=auto
+
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.md    text eol=lf
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.JPG   binary
+*.JPEG  binary
+*.gif   binary
+*.pdf   binary
+*.ico   binary
