@@ -380,7 +380,7 @@ body::after {
 .art-card:hover .art-thumb-wrapper img {
     transform: scale(1.05);
 }
-.art-card h4 {
+.art-card h2 {
     margin: 10px 0 5px 0;
     color: var(--accent);
     font-size: 1.1rem;

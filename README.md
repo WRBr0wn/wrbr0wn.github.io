@@ -17,7 +17,7 @@ Two pages. The homepage lists my technical projects and links out to the code or
 
 ## Stack
 
-No build step and no framework. A page loads its CSS, and the gallery additionally loads lightbox for the image viewer. Fonts come from Google Fonts. Every page sets a Content-Security-Policy that restricts scripts to same-origin.
+No build step and no framework. A page loads its CSS, and the gallery additionally loads lightbox for the image viewer. Fonts are self-hosted woff2 files in `fonts/`, preloaded in each page's head and backed by metric-matched fallback faces. Every page sets a Content-Security-Policy that restricts scripts to same-origin.
 
 ```
 ├── index.html          Homepage
@@ -27,8 +27,9 @@ No build step and no framework. A page loads its CSS, and the gallery additional
 │   ├── modern.css      Layout, theme, all page styles
 │   └── lightbox.min.css
 ├── js/
-│   ├── reveal.js       Reveal-on-scroll, degrades to nothing without JS
 │   └── lightbox-plus-jquery.min.js
+├── fonts/              Self-hosted Inter and JetBrains Mono (woff2)
+├── robots.txt
 └── images/
     ├── Full-Gallery/       Full-resolution art, opened by lightbox
     └── Thumbnail-Gallery/  Grid thumbnails
