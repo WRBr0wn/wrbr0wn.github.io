@@ -240,7 +240,7 @@ body::after {
 .arrow { position: absolute; right: 20px; bottom: 20px; color: var(--accent); font-size: 1.5rem; opacity: 0; transform: translateX(-10px); transition: all 0.2s; }
 .project-card:hover .arrow { opacity: 1; transform: translateX(0); }
 
-.main-footer { grid-column: span 4; text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 0.9rem; }
+.main-footer { text-align: center; margin-top: 40px; color: var(--text-secondary); font-size: 0.9rem; }
 .footer-kicker {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -405,7 +405,7 @@ body::after {
 /* Responsive */
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .main-footer, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
+    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
     .resume-snapshot { grid-row: span 1; }
     .hero { flex-direction: column-reverse; text-align: center; gap: 20px; }
     .hero-image img { width: 170px; height: 170px; }
