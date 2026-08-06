@@ -141,10 +141,22 @@ body::after {
 .tags span { background: rgba(82, 186, 213, 0.1); color: var(--accent); padding: 4px 8px; font-size: 0.8rem; border-radius: 4px; }
 .tiny { font-size: 0.85rem; color: var(--text-secondary); }
 
+/* Skills column sits alongside two rows of project cards, so keep it dense enough to fit */
+.resume-snapshot h4 { margin: 0 0 8px 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-secondary); font-family: var(--font-mono); font-weight: 400; }
+.resume-snapshot .skill-group { margin-bottom: 16px; }
+.resume-snapshot .tags { gap: 6px; }
+.resume-snapshot .tags span { font-size: 0.72rem; padding: 3px 7px; }
+.resume-snapshot ul { margin: 0; padding-left: 16px; font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); }
+.resume-snapshot ul li { margin-bottom: 4px; }
+
 .project-header { grid-column: span 3; padding: 15px 24px; display: flex; align-items: center; }
 .project-header h3 { margin: 0; font-size: 1.5rem; }
+/* Section header that sits below the skills column and so runs the full width */
+.project-header.full { grid-column: span 4; }
 
 .project-card { grid-column: span 1; height: 250px; position: relative; text-decoration: none; padding: 0; }
+/* Lead card in a section: twice the width, same height */
+.project-card.featured { grid-column: span 2; }
 .card-bg { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s; filter: grayscale(100%); }
 .project-card:hover .card-bg { transform: scale(1.1); filter: grayscale(0%); }
 .card-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 20px; box-sizing: border-box; }
@@ -191,6 +203,11 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Real project, no public link (course work). Reads as a normal card, just not clickable. */
+.project-card.no-link { cursor: default; }
+.project-card.no-link:hover { transform: none; box-shadow: none; }
+.project-card.no-link:hover .card-bg { transform: none; }
 
 /* Coming Soon placeholder cards */
 .project-card.coming-soon { cursor: default; }
@@ -327,7 +344,8 @@ body::after {
 /* Responsive */
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .hero, .socials, .resume-snapshot, .project-header, .project-card, .main-footer, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
+    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .main-footer, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
+    .resume-snapshot { grid-row: span 1; }
     .hero { flex-direction: column-reverse; text-align: center; }
     .gallery-intro { flex-direction: column-reverse; text-align: center; }
     .kicker { justify-content: center; }
