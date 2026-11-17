@@ -281,11 +281,10 @@ body::after {
 .project-card.no-link:hover { transform: none; box-shadow: none; }
 .project-card.no-link:hover .card-bg { transform: none; }
 
-/* Coming Soon placeholder cards */
-.project-card.coming-soon { cursor: default; }
-.project-card.coming-soon:hover { transform: none; box-shadow: none; }
-.project-card.coming-soon:hover .card-bg { transform: none; filter: grayscale(100%); }
-.project-card.coming-soon .card-bg { opacity: 0.5; }
+/* Card over a light photo. The shared overlay fades from clear to dark across the
+   text itself, which leaves the title on near-white. Here the fade finishes in the
+   padding above the text, so both lines sit on a near-solid scrim. */
+.project-card.on-photo .card-overlay { padding-top: 56px; background: linear-gradient(transparent 0, rgba(0,0,0,0.86) 48px, rgba(0,0,0,0.92) 100%); }
 .badge {
     display: inline-block;
     margin-top: 8px;
