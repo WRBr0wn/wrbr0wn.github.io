@@ -224,6 +224,14 @@ body::after {
 .resume-snapshot ul { margin: 0; padding-left: 16px; font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); }
 .resume-snapshot ul li { margin-bottom: 4px; }
 
+/* Experience: full-width card between the hero row and the skills column */
+.experience { grid-column: span 4; }
+.experience h3 { margin: 0 0 14px 0; font-size: 1.5rem; }
+.experience .role { margin: 0; font-weight: 600; }
+.experience .role-meta { margin: 4px 0 0 0; }
+.experience ul { margin: 12px 0 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); }
+.experience li { margin-bottom: 4px; }
+
 .project-header { grid-column: span 3; padding: 15px 24px; display: flex; align-items: center; }
 .project-header h3 { margin: 0; font-size: 1.5rem; }
 /* Section header that sits below the skills column and so runs the full width */
@@ -405,7 +413,7 @@ body::after {
 /* Responsive */
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
+    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .experience, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
     .resume-snapshot { grid-row: span 1; }
     .hero { flex-direction: column-reverse; text-align: center; gap: 20px; }
     .hero-image img { width: 170px; height: 170px; }

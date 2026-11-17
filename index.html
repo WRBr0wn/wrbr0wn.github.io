@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wyatt Brown | Data Science, Machine Learning, Systems</title>
-    <meta name="description" content="Wyatt Brown. Data Science undergraduate at the University of Minnesota. Machine learning and optimization, plus hands-on systems, network, and deployment work. Projects, resume, and art gallery.">
+    <meta name="description" content="Wyatt Brown. Data Science undergraduate at the University of Minnesota. Machine learning and software, built through to handoff. Experience, projects, resume, and art gallery.">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self'">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Wyatt Brown | Data Science, Machine Learning, Systems">
-    <meta property="og:description" content="Machine learning and optimization, plus hands-on systems and deployment work. Projects, resume, and art gallery.">
+    <meta property="og:description" content="Machine learning and software, built through to handoff. Experience, projects, resume, and art gallery.">
     <meta property="og:image" content="https://wrbr0wn.github.io/images/prof-headshot-cropped.jpg">
     <meta property="og:url" content="https://wrbr0wn.github.io/">
     <meta name="twitter:card" content="summary">
@@ -28,6 +28,7 @@
     <nav class="card nav-bar">
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
+            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="DrawnAtDusk.html">Gallery</a>
         </div>
@@ -38,7 +39,7 @@
             <p class="kicker"><span class="k-long">Data Science &middot; Machine Learning &middot; Systems</span><span class="k-short">Data Science &middot; ML &middot; Systems</span></p>
             <h1>Wyatt Brown</h1>
             <h2>Data Science Undergraduate <br> <span class="accent">University of Minnesota</span></h2>
-            <p></p>
+            <p>Machine learning and software, built through to handoff.</p>
             <p class="tiny">B.S. Data Science, December 2026.</p>
             <div class="action-buttons">
                 <a href="#projects" class="btn primary">Technical Projects</a>
@@ -56,6 +57,17 @@
         <a href="Wyatt-Brown-Resume.pdf" target="_blank" rel="noopener noreferrer" class="social-link highlight">Resume (PDF)</a>
     </div>
 
+    <div class="card experience" id="experience">
+        <h3>Experience</h3>
+        <p class="role">XLR8 Sports Training LLC &middot; Freelance IT Consultant &amp; Business Operations</p>
+        <p class="tiny role-meta">Menasha, WI &middot; Oct 2022 &ndash; Jan 2025</p>
+        <ul>
+            <li>Specified, installed, and configured the facility's security system, then trained the owner to run it himself.</li>
+            <li>Migrated 5+ years of paper records to secure offline digital storage, reconciling every batch against QuickBooks so no billing history was lost.</li>
+            <li>Sole onsite IT support for a business with no IT staff, and front-desk support for 100+ clients across scheduling, payments, and onboarding.</li>
+        </ul>
+    </div>
+
     <div class="card resume-snapshot">
         <h3>Technical Skills</h3>
 
@@ -66,6 +78,8 @@
                 <span>R</span>
                 <span>Java</span>
                 <span>Julia</span>
+                <span>TypeScript</span>
+                <span>C</span>
                 <span>SQL</span>
             </div>
         </div>
@@ -82,6 +96,8 @@
                 <span>Flask</span>
                 <span>Docker</span>
                 <span>Cloudflare Workers</span>
+                <span>PostgreSQL</span>
+                <span>Claude Code</span>
             </div>
         </div>
 
@@ -106,21 +122,40 @@
         <div class="card-overlay">
             <h4 style="color: #f5c542;">Hint Bank</h4>
             <p class="stack-tag">React &middot; TypeScript &middot; Cloudflare Workers</p>
-            <p class="tiny-desc">Server-authoritative multiplayer, one Durable Object per room. The server sends each client only its role-filtered view, so a screen that must not see the answer never receives it. Playable in the browser.</p>
+            <p class="tiny-desc">A party game for 2 to 8 players, live in the browser. Server-authoritative, one Durable Object per room: each screen receives only its role-filtered view, so the hidden answer never reaches a device that could leak it. 247 tests, 14 releases.</p>
+            <span class="badge">Play it</span>
             <span class="arrow">&rarr;</span>
         </div>
     </a>
 
-    <a href="https://github.com/WRBr0wn/Vending-Machine-Sales-Public" target="_blank" rel="noopener noreferrer" class="card project-card">
+    <div class="card project-card no-link">
+        <div class="card-bg" style="background: linear-gradient(135deg, #3a2412 0%, #7a4a1e 100%); filter: none;"></div>
+        <div class="card-overlay">
+            <h4>Java-to-TypeScript Port with Claude Code</h4>
+            <p class="stack-tag">Claude Code &middot; TypeScript &middot; Playwright</p>
+            <p class="tiny-desc">A Java transit simulator ported to strict TypeScript with Claude Code. Format, type, lint, and architecture checks run after every edit, backed by 152 tests.</p>
+        </div>
+    </div>
+
+    <a href="https://github.com/WRBr0wn/Vending-Machine-Sales-Public" target="_blank" rel="noopener noreferrer" class="card project-card featured">
         <div class="card-bg" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); filter: none;"></div>
         <div class="card-overlay">
             <h4>Vending Machine Assortment Optimization</h4>
             <p class="stack-tag">Python (CART) &middot; Julia/JuMP</p>
-            <p class="tiny-desc">Predict-then-optimize over a 239-machine fleet. Cut expected opportunity cost roughly 51% per machine.</p>
-            <span class="badge">Write-up &middot; code pending</span>
+            <p class="tiny-desc">Picks what goes in each machine of a 239-machine university fleet. A decision tree predicts what sells and an integer program chooses the assortment, cutting the estimated cost of stocking errors roughly 46% per machine.</p>
+            <span class="badge">Write-up</span>
             <span class="arrow">&rarr;</span>
         </div>
     </a>
+
+    <div class="card project-card no-link">
+        <div class="card-bg" style="background: linear-gradient(135deg, #3d1f1f 0%, #7a3b2e 100%); filter: none;"></div>
+        <div class="card-overlay">
+            <h4>Trained Head vs. Foundation Model</h4>
+            <p class="stack-tag">PyTorch &middot; DINOv2 &middot; Gemini API</p>
+            <p class="tiny-desc">A small classifier on a frozen DINOv2 backbone reaches 92.08% on Food-101. Zero-shot Gemini 2.5 Flash scores 93.94% on a sample, with latency and cost measured.</p>
+        </div>
+    </div>
 
     <div class="card project-card no-link">
         <div class="card-bg" style="background: linear-gradient(135deg, #2d1b3d 0%, #4a2c5a 100%); filter: none;"></div>
@@ -128,7 +163,6 @@
             <h4>Pec-King Order</h4>
             <p class="stack-tag">JAX &middot; Flax &middot; gymnax</p>
             <p class="tiny-desc">Multi-agent RL with Bayesian belief updates. Agents infer hidden opponent strength from observed outcomes alone.</p>
-            <span class="badge">Course project, code not public</span>
         </div>
     </div>
 
@@ -142,7 +176,7 @@
         </div>
     </a>
 
-    <a href="https://github.com/WRBr0wn" target="_blank" rel="noopener noreferrer" class="card project-card">
+    <a href="https://github.com/WRBr0wn" target="_blank" rel="noopener noreferrer" class="card project-card featured">
         <div class="card-bg" style="background: linear-gradient(135deg, #232526 0%, #414345 100%); filter: none;"></div>
         <div class="card-overlay">
             <h4>More on GitHub</h4>
@@ -164,24 +198,6 @@
             <span class="arrow">&rarr;</span>
         </div>
     </a>
-
-    <div class="card project-card coming-soon">
-        <div class="card-bg" style="background-image: url('images/zenvolka.png');"></div>
-        <div class="card-overlay">
-            <h4>Zen</h4>
-            <p>Media Online</p>
-            <span class="badge">Coming Soon</span>
-        </div>
-    </div>
-
-    <div class="card project-card coming-soon">
-        <div class="card-bg" style="background-image: url('images/musings.jpg');"></div>
-        <div class="card-overlay">
-            <h4>Musings</h4>
-            <p>Thoughts &amp; Essays</p>
-            <span class="badge">Coming Soon</span>
-        </div>
-    </div>
 
 </main>
 

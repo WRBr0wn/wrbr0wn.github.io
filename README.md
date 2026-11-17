@@ -6,13 +6,15 @@ Live at [wrbr0wn.github.io](https://wrbr0wn.github.io) and [wyattbrown.info](htt
 
 ## What is here
 
-Two pages. The homepage lists my technical projects and links out to the code or the running app for each. `DrawnAtDusk.html` is my art gallery, 27 acrylic and scratchboard pieces with a lightbox viewer.
+Two pages. The homepage covers my experience and technical projects, and links out to the code or the running app where one is public. `DrawnAtDusk.html` is my art gallery, 27 acrylic and scratchboard pieces with a lightbox viewer.
 
-## Projects linked from the homepage
+## Projects on the homepage
 
 - **Hint Bank.** Real-time multiplayer web game. React, TypeScript, Cloudflare Workers. [Play it](https://wrbr0wn.github.io/hintbank/).
-- **Vending Machine Assortment Optimization.** Predict-then-optimize over a 239-machine fleet. Python and Julia/JuMP. [Code](https://github.com/WRBr0wn/Vending-Machine-Sales-Public).
-- **Pec-King Order.** Multi-agent reinforcement learning under uncertainty. JAX, Flax, gymnax. Course project, code not public.
+- **Java-to-TypeScript Port with Claude Code.** A Java transit simulator ported to strict TypeScript, with checks after every edit. Claude Code, TypeScript, Playwright. Course project.
+- **Vending Machine Assortment Optimization.** Predict-then-optimize over a 239-machine fleet. Python and Julia/JuMP. [Write-up](https://github.com/WRBr0wn/Vending-Machine-Sales-Public).
+- **Trained Head vs. Foundation Model.** A DINOv2-based classifier against zero-shot Gemini 2.5 Flash on Food-101. PyTorch. Course project.
+- **Pec-King Order.** Multi-agent reinforcement learning under uncertainty. JAX, Flax, gymnax. Course project.
 - **Graphical Particle Simulator.** Java engine behind a Python Flask API, containerized. [Code](https://github.com/WRBr0wn/Particle-Simulator).
 
 ## Stack
