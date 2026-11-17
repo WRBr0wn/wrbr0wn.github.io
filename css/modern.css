@@ -224,14 +224,6 @@ body::after {
 .resume-snapshot ul { margin: 0; padding-left: 16px; font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); }
 .resume-snapshot ul li { margin-bottom: 4px; }
 
-/* Experience: full-width card between the hero row and the skills column */
-.experience { grid-column: span 4; }
-.experience h3 { margin: 0 0 14px 0; font-size: 1.5rem; }
-.experience .role { margin: 0; font-weight: 600; }
-.experience .role-meta { margin: 4px 0 0 0; }
-.experience ul { margin: 12px 0 0 0; padding-left: 18px; font-size: 0.9rem; line-height: 1.55; color: var(--text-secondary); }
-.experience li { margin-bottom: 4px; }
-
 .project-header { grid-column: span 3; padding: 15px 24px; display: flex; align-items: center; }
 .project-header h3 { margin: 0; font-size: 1.5rem; }
 /* Section header that sits below the skills column and so runs the full width */
@@ -240,6 +232,8 @@ body::after {
 .project-card { grid-column: span 1; height: 250px; position: relative; text-decoration: none; padding: 0; }
 /* Lead card in a section: twice the width, same height */
 .project-card.featured { grid-column: span 2; }
+/* Lead card: runs the width of the projects column beside the skills card */
+.project-card.wide { grid-column: span 3; }
 .card-bg { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s; filter: grayscale(100%); }
 .project-card:hover .card-bg { transform: scale(1.1); filter: grayscale(0%); }
 .card-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 20px; box-sizing: border-box; }
@@ -412,7 +406,7 @@ body::after {
 /* Responsive */
 @media (max-width: 900px) {
     .bento-grid { grid-template-columns: 1fr; }
-    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .experience, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
+    .hero, .socials, .resume-snapshot, .project-header, .project-header.full, .project-card, .project-card.featured, .project-card.wide, .nav-bar, .gallery-intro, .gallery-section { grid-column: span 1; }
     .resume-snapshot { grid-row: span 1; }
     .hero { flex-direction: column-reverse; text-align: center; gap: 20px; }
     .hero-image img { width: 170px; height: 170px; }
